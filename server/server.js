@@ -123,11 +123,12 @@ app.use(postRoutes);
 mongoose
   .connect(MONGODB_URI)
   .then(result => {
-    const server = app.listen(5000);
-    const io = require('./socket').init(server);
-    io.on('connection', socket => {
-      // console.log('Client connected' + socket.id);
-    });
+    app.listen(5000);
+//     const server = app.listen(5000);
+//     const io = require('./socket').init(server);
+//     io.on('connection', socket => {
+//       // console.log('Client connected' + socket.id);
+//     });
   })
   .catch(err => {
     console.log(err);
