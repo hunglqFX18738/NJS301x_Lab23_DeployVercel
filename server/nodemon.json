@@ -1,0 +1,7 @@
+{
+  "env": {
+    "MONGO_USER": "lqhung",
+    "MONGO_PASSWORD": "6zEAXDIIWI629M3r",
+    "MONGO_DEFAULT_DATABASE": "lab21"
+  }
+}
