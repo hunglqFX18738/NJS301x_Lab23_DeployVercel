@@ -23,20 +23,20 @@ function App() {
 
   const { error, sendRequest: getAuth, loading } = useHttp();
 
-  useEffect(() => {
-    const isAuthStore = data => {
-      dispatch(authActions.isAuth(data));
-    };
-    getAuth({ url: 'https://test-node-lab23-1.onrender.com/authentication' }, isAuthStore);
-    const socket = openSocket('https://test-node-lab23-1.onrender.com/');
-    socket.on('auth', data => {
-      if (data.action === 'login') {
-        getAuth({ url: 'https://test-node-lab23-1.onrender.com/authentication' }, isAuthStore);
-      } else if (data.action === 'logout') {
-        getAuth({ url: 'https://test-node-lab23-1.onrender.com/authentication' }, isAuthStore);
-      }
-    });
-  }, [getAuth, dispatch]);
+  // useEffect(() => {
+  //   const isAuthStore = data => {
+  //     dispatch(authActions.isAuth(data));
+  //   };
+  //   getAuth({ url: 'https://test-node-lab23-1.onrender.com/authentication' }, isAuthStore);
+  //   const socket = openSocket('https://test-node-lab23-1.onrender.com/');
+  //   socket.on('auth', data => {
+  //     if (data.action === 'login') {
+  //       getAuth({ url: 'https://test-node-lab23-1.onrender.com/authentication' }, isAuthStore);
+  //     } else if (data.action === 'logout') {
+  //       getAuth({ url: 'https://test-node-lab23-1.onrender.com/authentication' }, isAuthStore);
+  //     }
+  //   });
+  // }, [getAuth, dispatch]);
 
   return (
     <BrowserRouter>
