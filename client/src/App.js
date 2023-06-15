@@ -27,13 +27,13 @@ function App() {
     const isAuthStore = data => {
       dispatch(authActions.isAuth(data));
     };
-    getAuth({ url: 'http://localhost:5000/authentication' }, isAuthStore);
-    const socket = openSocket('http://localhost:5000');
+    getAuth({ url: 'https://test-node-lab23-1.onrender.com/authentication' }, isAuthStore);
+    const socket = openSocket('https://test-node-lab23-1.onrender.com/');
     socket.on('auth', data => {
       if (data.action === 'login') {
-        getAuth({ url: 'http://localhost:5000/authentication' }, isAuthStore);
+        getAuth({ url: 'https://test-node-lab23-1.onrender.com/authentication' }, isAuthStore);
       } else if (data.action === 'logout') {
-        getAuth({ url: 'http://localhost:5000/authentication' }, isAuthStore);
+        getAuth({ url: 'https://test-node-lab23-1.onrender.com/authentication' }, isAuthStore);
       }
     });
   }, [getAuth, dispatch]);
