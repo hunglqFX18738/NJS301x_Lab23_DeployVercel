@@ -54,7 +54,7 @@ const Post = () => {
     const fetchData = data => {
       setPostData(data);
     };
-    fetchPost({ url: 'http://localhost:5000/posts' }, fetchData);
+    fetchPost({ url: 'https://test-node-lab23-1.onrender.com/all-post' }, fetchData);
     const socket = openSocket('http://localhost:5000');
     socket.on('posts', data => {
       if (data.action === 'add') {
